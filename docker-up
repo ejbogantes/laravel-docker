@@ -7,4 +7,4 @@
 docker-compose -f docker-compose.yml \
                -f docker/docker-compose.mysql.yml \
                -f docker/docker-compose.phpmyadmin.yml \
-                up --build
+                up --build -d
