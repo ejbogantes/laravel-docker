@@ -1,0 +1,8 @@
+version: '3'
+services:
+  php:
+    container_name: ld-php
+    build:
+      context: ./
+      dockerfile: /docker/php/postgres.dockerfile
+    working_dir: /var/www

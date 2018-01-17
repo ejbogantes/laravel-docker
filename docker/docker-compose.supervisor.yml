@@ -1,0 +1,9 @@
+version: '3'
+services:
+ supervisor:
+  command: ["/usr/bin/supervisord","-n", "-c",  "/etc/supervisor/supervisord.conf"]
+  container_name: ld-supervisor
+  image:  kdelfour/supervisor-docker
+  volumes:
+    - ./docker/supervisor:/etc/supervisor/conf.d
+    - ld-data:/var/supervisor/data 

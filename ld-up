@@ -1,0 +1,151 @@
+#!/bin/bash
+
+# Beginning 
+echo "";
+echo "########################################"
+echo "# Laravel Docker Bundle - Let's Build  #" 
+echo "########################################"
+echo ""
+
+#The default option - PLEASE EDIT THIS OPTION 
+DEFAULT="mysql"
+
+#Get the option
+OPTION=${1:-DEFAULT}
+
+case $OPTION in
+
+#This is the only MySQL option
+    "mysql") 
+ echo "###############################"
+ echo "# Option selected: Only MySQL #"
+ echo "###############################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.mysql.yml \
+                up --build -d
+;;
+
+#This is the MySQL + PHPMyAdmin option
+    "mysql+phpmyadmin") 
+ echo "#######################################"
+ echo "# Option selected: MySQL + PHPMyAdmin #"
+ echo "#######################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.mysql.yml \
+                -f docker/docker-compose.phpmyadmin.yml \
+                up --build -d
+;;
+
+#This is the MySQL + PHPMyAdmin + Supervisor option
+    "mysql+phpmyadmin+supervisor") 
+ echo "####################################################"
+ echo "# Option selected: MySQL + PHPMyAdmin + Supervisor #"
+ echo "####################################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.mysql.yml \
+                -f docker/docker-compose.phpmyadmin.yml \
+                -f docker/docker-compose.supervisor.yml \
+                up --build -d
+;;
+
+#This is the MySQL + PHPMyAdmin + Supervisor + Redis option
+    "mysql+phpmyadmin+supervisor+redis") 
+ echo "############################################################"
+ echo "# Option selected: MySQL + PHPMyAdmin + Supervisor + Redis #"
+ echo "############################################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.mysql.yml \
+                -f docker/docker-compose.phpmyadmin.yml \
+                -f docker/docker-compose.supervisor.yml \
+                -f docker/docker-compose.redis.yml \
+                up --build -d
+;;
+
+#This is the only Postgres option
+    "postgres") 
+ echo "##################################"
+ echo "# Option selected: Only Postgres #"
+ echo "##################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.php-postgres.yml \
+                -f docker/docker-compose.postgres.yml \
+                up --build -d
+;;
+
+#This is the Postgres + Adminer option
+    "postgres+adminer") 
+ echo "#######################################"
+ echo "# Option selected: Postgres + Adminer #"
+ echo "#######################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.php-postgres.yml \
+                -f docker/docker-compose.postgres.yml \
+                -f docker/docker-compose.adminer.yml \
+                up --build -d
+;;
+
+#This is the Postgres + Adminer + Supervisor option
+    "postgres+adminer+supervisor") 
+ echo "####################################################"
+ echo "# Option selected: Postgres + Adminer + Supervisor #"
+ echo "####################################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.php-postgres.yml \
+                -f docker/docker-compose.postgres.yml \
+                -f docker/docker-compose.adminer.yml \
+                -f docker/docker-compose.supervisor.yml \
+                up --build -d
+;;
+
+#This is the Postgres + Adminer + Supervisor + Redis option
+    "postgres+adminer+supervisor+redis") 
+ echo "############################################################"
+ echo "# Option selected: Postgres + Adminer + Supervisor + Redis #"
+ echo "############################################################"
+ echo ""
+ docker-compose -f docker-compose.yml \
+                -f docker/docker-compose.php-postgres.yml \
+                -f docker/docker-compose.postgres.yml \
+                -f docker/docker-compose.adminer.yml \
+                -f docker/docker-compose.supervisor.yml \
+                -f docker/docker-compose.redis.yml \
+                up --build -d
+;;
+
+*)
+
+# Default is MySQL with PHP MyAdmin
+echo "#################################################"
+echo "#         Option selected: Default ($DEFAULT)   #"
+echo "#################################################"
+echo ""
+docker-compose -f docker-compose.yml \
+               -f docker/docker-compose.mysql.yml \
+               -f docker/docker-compose.phpmyadmin.yml \
+               up --build -d
+;;
+
+esac
+
+# End
+echo ""
+echo ""
+echo "###############################"
+echo "# Now, enjoy your creation :) #"
+echo "###############################"
+echo ""
+echo ""
+echo "###############################"
+echo "#      Docker Containers      #"
+echo "###############################"
+docker ps
+echo ""
+echo ""
+

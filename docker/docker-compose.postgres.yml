@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    container_name: ld-postgres
+    image: postgres:latest
+    volumes:
+      - ld-data:/var/lib/postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: ld-database
+    ports:
+      - "5432:5432"
+    networks:
+      - ld-net 

@@ -7,3 +7,9 @@ services:
        - 'PMA_HOST=mysql'
     ports:
       - "8080:80"
+    networks:
+      - ld-net
+    depends_on:
+      - mysql
+    links:
+      - mysql

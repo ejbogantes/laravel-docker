@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/**
+ * System Default Routes
+ */
+
+Route::get('/system/check', function () {
+    return view('system.requirements-check');
+});
+
+Route::get('/system/info', function () {
+    return view('system.info');
+});

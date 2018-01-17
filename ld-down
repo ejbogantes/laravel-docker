@@ -1,0 +1,18 @@
+#!/bin/bash
+# Beginning 
+echo "";
+echo "##########################################"
+echo "# Laravel Docker Bundle - Shutting Down  #" 
+echo "##########################################"
+echo ""
+
+# Stops all containers
+docker-compose down --remove-orphans          
+
+# End
+echo ""
+echo ""
+echo "###############################"
+echo "#         Good Bye :)         #"
+echo "###############################"
+echo ""
