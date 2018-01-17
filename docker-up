@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Run with Mysql
+#docker-compose -f docker-compose.yml -f docker/docker-compose.mysql.yml up --build
+
+# Run with Mysql/phpadmin
+docker-compose -f docker-compose.yml \
+               -f docker/docker-compose.mysql.yml \
+               -f docker/docker-compose.phpmyadmin.yml \
+                up --build

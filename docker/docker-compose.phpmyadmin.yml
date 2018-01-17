@@ -1,0 +1,9 @@
+version: '3'
+services:
+  phpmyadmin:
+    container_name: ld-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    environment:
+       - 'PMA_HOST=mysql'
+    ports:
+      - "8080:80"
