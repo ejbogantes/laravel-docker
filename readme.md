@@ -1,6 +1,6 @@
 ## About Laravel Docker
 
-Laravel Docker is a bundle to develop Laravel projects using pre builded Docker images with the following infraestructure:
+Laravel Docker is a bundle to develop Laravel projects using pre builded Docker images with the following infrastructure:
 
 - PHP version:        7.2.1 fpm
 - Laravel version:    5.5
