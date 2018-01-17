@@ -9,3 +9,7 @@ services:
     environment:
       - "DB_PORT=5432"
       - "DB_HOST=postgres"
+      - "DB_CONNECTION=pgsql"
+      - "DB_DATABASE=ld-database"
+      - "DB_USER=root"
+      - "DB_PASSWORD=root"
