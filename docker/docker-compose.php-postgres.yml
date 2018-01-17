@@ -6,3 +6,6 @@ services:
       context: ./
       dockerfile: /docker/php/postgres.dockerfile
     working_dir: /var/www
+    environment:
+      - "DB_PORT=5432"
+      - "DB_HOST=postgres"
