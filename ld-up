@@ -134,6 +134,17 @@ docker-compose -f docker-compose.yml \
 
 esac
 
+#Run startup commands
+echo ""
+echo ""
+echo "#################################################"
+echo "#            Running startup comands            #"
+echo "#################################################"
+echo ""
+echo ""
+#Laravel Migration
+docker exec -it ld-php php artisan migrate
+
 # End
 echo ""
 echo ""

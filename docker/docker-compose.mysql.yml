@@ -2,11 +2,11 @@ version: '3'
 services:
   mysql:
     container_name: ld-mysql
-    image: mysql:latest
+    image: mysql:5.7.20
     volumes:
       - ld-data:/var/lib/mysql
     environment:
-      - "MYSQL_DATABASE=mysql"
+      - "MYSQL_DATABASE=ld-database"
       - "MYSQL_USER=root"
       - "MYSQL_PASSWORD=root"
       - "MYSQL_ROOT_PASSWORD=root"

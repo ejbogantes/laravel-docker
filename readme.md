@@ -4,9 +4,9 @@ Laravel Docker is a bundle to develop Laravel projects using pre builded Docker 
 
 - PHP version:        7.2.1 fpm
 - Laravel version:    5.5
-- Nginx version:      The latest
-- MySQL version:      The latest
-- Postgres version:   The latest
+- Nginx version:      1.12.2
+- MySQL version:      5.7.20
+- Postgres version:   10.1
 - PHPMyAdmin version: The latest
 - Adminer version:    The latest
 - Supervisor version: The latest

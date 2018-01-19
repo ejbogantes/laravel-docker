@@ -2,15 +2,16 @@ version: '3'
 services:
   postgres:
     container_name: ld-postgres
-    image: postgres:latest
+    image: postgres:10.1
     volumes:
-      - ld-data:/var/lib/postgres
+      - ld-data:/var/lib/postgresql/data
     restart: always
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       POSTGRES_DB: ld-database
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
     networks:
-      - ld-net 
+      - ld-net
